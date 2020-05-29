@@ -1,0 +1,18 @@
+runtime: java11
+env: standard
+service: default
+instance_class: F1
+handlers:
+  - url: .*
+    script: auto
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+  max_instances: 1
+network: {}
+env_variables:
+  ROOT_PACKAGE: '@projectl.groupId@'
+  JAVA_USER_OPTS: -Djava.util.logging.config.file=webapps/WEB-INF/logging.properties
+entrypoint: 'java -Duser.timezone=GMT-3 -Duser.language=pt -Duser.country=BR -Dfile.encoding=UTF-8 -jar @docker.buildArg.appId@'

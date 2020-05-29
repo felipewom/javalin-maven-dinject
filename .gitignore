@@ -1,0 +1,14 @@
+/web/functions/lib/
+/target
+/node_modules
+/.vscode
+.m2/repository/
+.idea
+.classpath
+.project
+.vscode
+.settings
+*.log
+*.iml
+*.versionsBackup
+/api/target/

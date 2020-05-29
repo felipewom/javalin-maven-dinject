@@ -1,0 +1,68 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "CPA Classificacao",
+    "description" : "CPA Classificacao",
+    "version" : ""
+  },
+  "paths" : {
+    "/areas/:id" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Context"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AreaDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AreaDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "nullable" : false
+          },
+          "name" : {
+            "type" : "string",
+            "nullable" : false
+          }
+        }
+      },
+      "Context" : {
+        "type" : "object"
+      }
+    }
+  }
+}
